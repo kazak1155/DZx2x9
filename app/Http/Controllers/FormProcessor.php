@@ -14,12 +14,9 @@ class FormProcessor extends Controller
 
     public function store(Request $request)
     {
-        $userData = [
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'email' => $request->email
-        ];
-
-        return response()->json($userData);
+        return view('hello',
+        [
+            'userName' => $request->name
+        ]);
     }
 }
